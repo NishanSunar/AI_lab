@@ -2,11 +2,14 @@ import streamlit as st
 import joblib
 import pandas as pd
 import numpy as np
+from pathlib import Path
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Load model and dataset
-model = joblib.load("model.joblib")
-df = pd.read_csv("bbc_news_dataset.csv")
+BASE_DIR = Path(__file__).parent
+
+model = joblib.load(BASE_DIR / "model.joblib")
+df = pd.read_csv(BASE_DIR / "bbc_news_dataset.csv")
 
 vectorizer = model.named_steps["tfidfvectorizer"]
 
