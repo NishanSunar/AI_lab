@@ -95,8 +95,6 @@ def astar(start, heuristic):
 
 root = tk.Tk()
 root.title("8 puzzle solver")
-# up to here no thing will appear , appear and closes instantaneouly 
-# you need mainloop to show the window 
 buttons = []
 for i in range(3):
     row = []
